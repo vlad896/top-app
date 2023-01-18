@@ -12,7 +12,7 @@ export default function Home() {
 	});
 	return (
 		<>
-			<Htag tag='h1'>{counter}</Htag>
+			<Htag tag='h2'>{counter}</Htag>
 			<Button appearance='primary' arrow='down' onClick={() => setCounter(x => x + 1)}>Кнопка</Button>
 			<Button appearance='ghost' arrow='right'>Кнопка</Button>
 			<Ptag size='big'>big</Ptag>
