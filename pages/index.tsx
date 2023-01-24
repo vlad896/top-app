@@ -1,9 +1,11 @@
 
 import React, { useEffect, useState } from 'react';
-import { Button, Htag, Ptag, Tag } from '../components';
+import { Button, Htag, Ptag, Tag, Rating } from '../components';
+import { withLayout } from '../layout/layout';
 
-export default function Home() {
+function Home() {
 	const [counter, setCounter] = useState<number>(0);
+	const [rating, setRating] = useState<number>(4);
 	useEffect(() => {
 		console.log('counter' + counter);
 		return function cleam() {
@@ -20,6 +22,8 @@ export default function Home() {
 			<Ptag size='small'>small</Ptag>
 			<Tag size='small' color='green' href='www.google.com'>fasdffs</Tag>
 			<Tag size='medium' color='primary' href='www.google.com'>fasdffs</Tag>
+			<Rating rating={rating} setRating={setRating} isEditable ></Rating>
 		</>
 	);
 }
+export default withLayout(Home);
