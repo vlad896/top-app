@@ -6,7 +6,7 @@ import { withLayout } from '../layout/layout';
 import axios from 'axios';
 import { MenuItem } from '../interfacesFront/menu.interface';
 
-function Home({ menu }: HomeProps): JSX.Element {
+function Home({ menu, firstCategory }: HomeProps): JSX.Element {
 	const [counter, setCounter] = useState<number>(0);
 	const [rating, setRating] = useState<number>(4);
 	useEffect(() => {
@@ -27,7 +27,7 @@ function Home({ menu }: HomeProps): JSX.Element {
 			<Tag size='medium' color='primary' href='www.google.com'>fasdffs</Tag>
 			<Rating rating={rating} setRating={setRating} isEditable ></Rating>
 			<ul>
-				{menu.map(m => (<li key={m._id.secondCategory}>{m._id.secondCategory}</li>))}
+				{menu.map(m => (<li>{m._id.secondCategory}</li>))}
 			</ul>
 		</>
 	);
@@ -36,9 +36,7 @@ export default withLayout(Home);
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 	const firstCategory = 0;
-	const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
-		firstCategory
-	});
+	const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find');
 	return {
 		props: {
 			menu,
@@ -47,7 +45,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 	};
 };
 
-interface HomeProps extends Record<string, unknown> { //типизация возвращаемого значения
+interface HomeProps { //типизация возвращаемого значения
 	menu: MenuItem[];
 	firstCategory: number;
 }

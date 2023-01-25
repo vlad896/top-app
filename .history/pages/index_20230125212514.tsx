@@ -6,7 +6,7 @@ import { withLayout } from '../layout/layout';
 import axios from 'axios';
 import { MenuItem } from '../interfacesFront/menu.interface';
 
-function Home({ menu }: HomeProps): JSX.Element {
+function Home({ menu, firstCategory }: HomeProps): JSX.Element {
 	const [counter, setCounter] = useState<number>(0);
 	const [rating, setRating] = useState<number>(4);
 	useEffect(() => {
