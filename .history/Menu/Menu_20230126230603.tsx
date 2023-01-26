@@ -9,7 +9,7 @@ import ServicesIcon from './icons/services.svg';
 import cn from 'classnames';
 import { TopLevelCategory } from '../interfacesFront/toppage.interface';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 
 const firstLevelMenu: FirstLevelMenuItem[] = [
 	{ route: 'courses', name: 'Курсы', icon: <CoursesIcon />, id: TopLevelCategory.Courses },
@@ -20,7 +20,7 @@ const firstLevelMenu: FirstLevelMenuItem[] = [
 
 export const Menu = () => {
 	const { menu, setMenu, firstCategory } = useContext(AppContext);
-	const router = useRouter();
+	const Router = useRouter();
 
 	const buildFirstLevel = () => {
 		return (
@@ -46,21 +46,16 @@ export const Menu = () => {
 	const buildSecondLevel = (menuItem: FirstLevelMenuItem) => {
 		return (
 			<div className={styles.secondBlock}>
-				{menu.map(m => {
-					if (m.pages.map(p => p.alias).includes(router.asPath.split('/')[2])) {
-						m.isOpened = true;
-					}
-					return (
-						<div key={m._id.secondCategory}>
-							<div className={styles.secondLevel}>{m._id.secondCategory}</div>
-							<div className={cn(styles.secondLevelBlock, {
-								[styles.secondLevelBlockOpened]: m.isOpened
-							})}>
-								{buildThirdLevel(m.pages, menuItem.route)}
-							</div>
+				{menu.map(m => (
+					<div key={m._id.secondCategory}>
+						<div className={styles.secondLevel}>{m._id.secondCategory}</div>
+						<div className={cn(styles.secondLevelBlock, {
+							[styles.secondLevelBlockOpened]: m.isOpened
+						})}>
+							{buildThirdLevel(m.pages, menuItem.route)}
 						</div>
-					);
-				})}
+					</div>
+				))}
 			</div>
 		);
 	};

@@ -22,14 +22,6 @@
 	color: var(--primary);
 }
 
-.secondLevelBlock {
-	display: none;
-}
-
-.secondLevelBlockOpened {
-	display: block;
-}
-
 .secondLevel {
 	margin-bottom: 10px;
 

@@ -12,7 +12,7 @@ const firstCategory = 0;
 function Course({ menu, page, product }: CourseProps): JSX.Element {
 	return (
 		<>
-			{product && product.length}
+			{product && product}
 		</>
 	);
 }

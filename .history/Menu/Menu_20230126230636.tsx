@@ -46,21 +46,16 @@ export const Menu = () => {
 	const buildSecondLevel = (menuItem: FirstLevelMenuItem) => {
 		return (
 			<div className={styles.secondBlock}>
-				{menu.map(m => {
-					if (m.pages.map(p => p.alias).includes(router.asPath.split('/')[2])) {
-						m.isOpened = true;
-					}
-					return (
-						<div key={m._id.secondCategory}>
-							<div className={styles.secondLevel}>{m._id.secondCategory}</div>
-							<div className={cn(styles.secondLevelBlock, {
-								[styles.secondLevelBlockOpened]: m.isOpened
-							})}>
-								{buildThirdLevel(m.pages, menuItem.route)}
-							</div>
+				{menu.map(m => (
+					<div key={m._id.secondCategory}>
+						<div className={styles.secondLevel}>{m._id.secondCategory}</div>
+						<div className={cn(styles.secondLevelBlock, {
+							[styles.secondLevelBlockOpened]: m.isOpened
+						})}>
+							{buildThirdLevel(m.pages, menuItem.route)}
 						</div>
-					);
-				})}
+					</div>
+				))}
 			</div>
 		);
 	};

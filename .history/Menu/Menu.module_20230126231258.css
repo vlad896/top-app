@@ -21,15 +21,9 @@
 .firstLevel:hover {
 	color: var(--primary);
 }
-
-.secondLevelBlock {
+.secondLevelBlock{
 	display: none;
 }
-
-.secondLevelBlockOpened {
-	display: block;
-}
-
 .secondLevel {
 	margin-bottom: 10px;
 

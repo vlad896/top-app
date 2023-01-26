@@ -1,4 +1,4 @@
-.firstLevel {
+.first-level {
 	display: grid;
 	align-items: center;
 
@@ -20,14 +20,6 @@
 .firstLevelActive,
 .firstLevel:hover {
 	color: var(--primary);
-}
-
-.secondLevelBlock {
-	display: none;
-}
-
-.secondLevelBlockOpened {
-	display: block;
 }
 
 .secondLevel {
