@@ -1,31 +1,34 @@
+import { use, useContext } from 'react';
+import { AppContext } from '../context/app.context';
+import { FirstLevelMenuItem, PageItem } from '../../top-app/interfacesFront/menu.interface';
+import styles from './Menu.module.css';
 import CoursesIcon from './icons/courses.svg';
 import BookIcon from './icons/books.svg';
 import ProductIcon from './icons/product.svg';
 import ServicesIcon from './icons/services.svg';
-
-import { useContext } from 'react';
-import { AppContext } from '../context/app.context';
-import { FirstLevelMenuItem, PageItem } from '../../top-app/interfacesFront/menu.interface';
-import styles from './Menu.module.css';
-
 import cn from 'classnames';
+import { TopLevelCategory } from '../interfacesFront/toppage.interface';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { firstLevelMenu } from '../helpers/helpers';
 
-
+const firstLevelMenu: FirstLevelMenuItem[] = [
+	{ route: 'courses', name: 'Курсы', icon: <CoursesIcon />, id: TopLevelCategory.Courses },
+	{ route: 'service', name: 'Сервисы', icon: <ServicesIcon />, id: TopLevelCategory.Services },
+	{ route: 'book', name: 'Книги', icon: <BookIcon />, id: TopLevelCategory.Books },
+	{ route: 'products', name: 'Продукты', icon: <ProductIcon />, id: TopLevelCategory.Products }
+];
 
 export const Menu = () => {
 	const { menu, setMenu, firstCategory } = useContext(AppContext);
 	const router = useRouter();
 
 	const openSecondLevel = (secondCategory: string) => {
-		setMenu && setMenu(menu.map(m => {
+		setMenu(menu.map(m => {
 			if (m._id.secondCategory == secondCategory) {
-				m.isOpened = !m.isOpened;
+				m.isOpened = true;
 			}
 			return m;
-		}));
+		}))
 	};
 
 	const buildFirstLevel = () => {
@@ -58,7 +61,7 @@ export const Menu = () => {
 					}
 					return (
 						<div key={m._id.secondCategory}>
-							<div className={styles.secondLevel} onClick={() => openSecondLevel(m._id.secondCategory)}>{m._id.secondCategory}</div>
+							<div className={styles.secondLevel}>{m._id.secondCategory}</div>
 							<div className={cn(styles.secondLevelBlock, {
 								[styles.secondLevelBlockOpened]: m.isOpened
 							})}>
