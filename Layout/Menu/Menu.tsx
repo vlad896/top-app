@@ -21,7 +21,7 @@ const variants = {
 const variantsChildren = {
   visible: {
     opacity: 1,
-    height: 32,
+    minHeight: 32,
   },
   hidden: {
     opacity: 0,
