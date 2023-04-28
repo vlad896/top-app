@@ -1,49 +1,48 @@
 .footer {
-	display: grid;
+  display: grid;
 
-	padding: 25px 30px;
+  padding: 25px 30px;
 
-	color: var(--white);
-	background: var(--primary);
+  color: var(--white);
+  background: var(--primary);
 
-	font-size: 16px;
-	font-weight: 500;
-	line-height: 20px;
-	grid-template-columns: 1fr auto auto;
-	grid-template-areas: "first second third";
-	gap: 10px 40px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  grid-template-columns: 1fr auto auto;
+  grid-template-areas: "first second third";
+  gap: 10px 40px;
 }
 
 .first {
-	grid-area: first;
+  grid-area: first;
 }
 
 .second {
-	grid-area: second;
+  grid-area: second;
 }
 
 .third {
-	grid-area: third;
+  grid-area: third;
 }
 
 .footer a {
-	display: inline-block;
+  display: inline-block;
 }
 
 .footer a:hover {
-	cursor: pointer;
-	transition: all 0.2s;
+  cursor: pointer;
+  transition: all 0.2s;
 
-	color: #D5D0D0;
+  color: #d5d0d0;
 }
 
 @media (max-width: 765px) {
-	.footer {
-
-		grid-template-columns: 1fr;
-		grid-template-areas:
-			"first"
-			"second"
-			"third";
-	}
+  .footer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "first"
+      "second"
+      "third";
+  }
 }

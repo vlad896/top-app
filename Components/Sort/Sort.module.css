@@ -1,45 +1,45 @@
 .icon {
-	display: none;
+  display: none;
 }
 
 .active .icon {
-	display: block;
+  display: block;
 }
 
 .sort {
-	display: inline-block;
-	display: grid;
-	grid-template-columns: auto auto;
-	gap: 40px;
+  display: inline-block;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 40px;
 
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .sort button {
-	display: grid;
+  display: grid;
 
-	align-items: center;
+  align-items: center;
 
-	border: none;
+  border: none;
 
-	background: none;
+  background: none;
 
-	font-size: 16px;
-	line-height: 22px;
-	gap: 8px;
-	grid-template-columns: 20px 1fr;
+  font-size: 16px;
+  line-height: 22px;
+  gap: 8px;
+  grid-template-columns: 20px 1fr;
 }
 
 .active {
-	color: var(--primary);
+  color: var(--primary);
 
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .sort button:not(.active) {
-	grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
 }
 
 .sorted {
-	display: none;
+  display: none;
 }

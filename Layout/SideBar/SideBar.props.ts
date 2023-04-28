@@ -1,5 +1,7 @@
-import { DetailedHTMLProps, HtmlHTMLAttributes } from 'react';
+import { DetailedHTMLProps, HtmlHTMLAttributes } from "react";
 
-export interface ISideBarProps extends DetailedHTMLProps<HtmlHTMLAttributes<HTMLDivElement>,HTMLDivElement>{
-
-}
+export interface ISideBarProps
+  extends DetailedHTMLProps<
+    HtmlHTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  > {}

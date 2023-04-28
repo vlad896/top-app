@@ -1,88 +1,88 @@
 .firstLevel {
-	display: grid;
-	align-items: center;
+  display: grid;
+  align-items: center;
 
-	margin-top: 20px;
+  margin-top: 20px;
 
-	font-size: 18px;
-	font-weight: 500;
-	line-height: 25px;
-	grid-template-columns: 24px 1fr;
-	gap: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25px;
+  grid-template-columns: 24px 1fr;
+  gap: 20px;
 }
 
 .firstLevelActive,
 .firstLevel:hover {
-	color: var(--primary);
+  color: var(--primary);
 }
 
 .firstLevelActive svg,
 .firstLevel:hover svg {
-	fill: var(--primary);
+  fill: var(--primary);
 }
 
 .secondLevelBlock {
-	overflow: hidden;
+  overflow: hidden;
 
-	padding: 0;
+  padding: 0;
 
-	list-style: none;
+  list-style: none;
 }
 
 .secondLevel {
-	margin-bottom: 10px;
-	margin-left: 32px;
-	padding: 0;
+  margin-bottom: 10px;
+  margin-left: 32px;
+  padding: 0;
 
-	cursor: pointer;
-	text-transform: uppercase;
+  cursor: pointer;
+  text-transform: uppercase;
 
-	color: var(--gray-dark);
-	border: none;
-	background: none;
+  color: var(--gray-dark);
+  border: none;
+  background: none;
 
-	font-size: 12px;
+  font-size: 12px;
 
-	font-weight: 300;
-	line-height: 16px;
+  font-weight: 300;
+  line-height: 16px;
 }
 
 .secondBlock {
-	margin-top: 15px;
-	margin-left: 12px;
-	padding: 0 0 0 32px;
+  margin-top: 15px;
+  margin-left: 12px;
+  padding: 0 0 0 32px;
 
-	list-style: none;
+  list-style: none;
 
-	border-left: 1px solid #DFDFDF;
+  border-left: 1px solid #dfdfdf;
 }
 
 .firstLevelList {
-	padding: 0;
+  padding: 0;
 
-	list-style: none;
+  list-style: none;
 }
 
 .ThirdLevel {
-	display: block;
+  display: block;
 
-	margin-bottom: 10px;
-	padding: 0 0 0 32px;
+  margin-bottom: 10px;
+  padding: 0 0 0 32px;
 
-	cursor: pointer;
+  cursor: pointer;
 
-	color: var(--gray-dark);
+  color: var(--gray-dark);
 
-	font-size: 14px;
-	font-weight: 500;
-	line-height: 19px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
 }
 
 .ThirdLevelActive,
 .ThirdLevel:hover {
-	color: var(--primary);
+  color: var(--primary);
 }
 
 .menu ul {
-	padding: 0;
+  padding: 0;
 }

@@ -1,9 +1,5 @@
-import { IHeaderProps } from './Header.props';
+import { IHeaderProps } from "./Header.props";
 
-export const Header=({...props}:IHeaderProps)=>{
-	return(
-		<div {...props}>
-			Header
-		</div>
-	);
+export const Header = ({ ...props }: IHeaderProps) => {
+  return <div {...props}>Header</div>;
 };
