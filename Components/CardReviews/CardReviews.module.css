@@ -1,0 +1,51 @@
+.CardReviews {
+	display: grid;
+	grid-template-columns: [start]30px 1fr auto auto[end];
+
+	align-items: center;
+	gap: 15px;
+}
+
+.date {
+	margin-right: 10px;
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 19px;
+}
+
+.name {
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 24px;
+}
+
+.title {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 19px;
+}
+
+.description {
+	text-align: justify;
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+	grid-column: start/end;
+}
+
+.hr {
+	grid-column: start/end;
+}
+
+@media screen and (max-width: 640px) {
+	.CardReviews {
+		grid-template-columns: [start]30px auto [dateend] 1fr [end];
+	}
+
+	.date,
+	.rating {
+		grid-column: start/end;
+	}
+}
