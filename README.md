@@ -1,3 +1,3 @@
-# project next.js
+# A very nice project
 
-import BookIcon from '../../icon/book.svg';
+You need `npm run dev` to start the project
