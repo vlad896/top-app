@@ -1,8 +1,8 @@
 .product {
   display: grid;
-  grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(
-      50% - 100px
-    ) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratestart] auto [end];
+  grid-template-columns:
+    [start] 70px [logoend] 30px [titlestart] calc(50% - 100px)
+    [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratestart] auto [end];
 
   margin-top: 30px;
   padding: 30px;
@@ -175,16 +175,16 @@
   .product {
     grid-template-columns: 70px 30px auto 40px auto 40px 1fr;
     grid-template-areas:
-      "logo . title title title title title"
-      "logo . tags tags tags tags tags"
-      "price price price . credit . rating"
-      "priceTitle priceTitle priceTitle . creditTitle . rateTitle"
-      "hr hr hr hr hr hr hr"
-      "description description description description description description description"
-      "feature feature feature feature feature feature feature"
-      "advblock advblock advblock advblock advblock advblock advblock"
-      "hr2 hr2 hr2 hr2 hr2 hr2 hr2"
-      "button button button button button button button";
+      'logo . title title title title title'
+      'logo . tags tags tags tags tags'
+      'price price price . credit . rating'
+      'priceTitle priceTitle priceTitle . creditTitle . rateTitle'
+      'hr hr hr hr hr hr hr'
+      'description description description description description description description'
+      'feature feature feature feature feature feature feature'
+      'advblock advblock advblock advblock advblock advblock advblock'
+      'hr2 hr2 hr2 hr2 hr2 hr2 hr2'
+      'button button button button button button button';
   }
 
   .logo {
@@ -252,17 +252,17 @@
   .product {
     grid-template-columns: 70px 30px 1fr;
     grid-template-areas:
-      "logo . title"
-      "logo . tags"
-      "priceTitle priceTitle price "
-      "creditTitle creditTitle credit "
-      "rateTitle rateTitle rating"
-      "hr hr hr"
-      "description description description"
-      "feature feature feature"
-      "advblock advblock advblock"
-      "hr2 hr2 hr2"
-      "button button button";
+      'logo . title'
+      'logo . tags'
+      'priceTitle priceTitle price '
+      'creditTitle creditTitle credit '
+      'rateTitle rateTitle rating'
+      'hr hr hr'
+      'description description description'
+      'feature feature feature'
+      'advblock advblock advblock'
+      'hr2 hr2 hr2'
+      'button button button';
   }
 }
 
@@ -270,21 +270,21 @@
   .product {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "logo"
-      "title"
-      "tags"
-      "priceTitle"
-      "price"
-      "creditTitle"
-      "credit"
-      "rateTitle"
-      "rating"
-      "hr"
-      "description"
-      "feature"
-      "advblock"
-      "hr2"
-      "button";
+      'logo'
+      'title'
+      'tags'
+      'priceTitle'
+      'price'
+      'creditTitle'
+      'credit'
+      'rateTitle'
+      'rating'
+      'hr'
+      'description'
+      'feature'
+      'advblock'
+      'hr2'
+      'button';
   }
 }
 

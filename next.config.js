@@ -1,10 +1,10 @@
 module.exports = {
   images: {
-    domains: ["courses-top.ru"],
+    domains: ['courses-top.ru'],
   },
   webpack(config, options) {
     config.module.rules.push({
-      loader: "@svgr/webpack",
+      loader: '@svgr/webpack',
       issuer: /\.[jt]sx?$/,
       options: {
         prettier: false,
@@ -12,7 +12,7 @@ module.exports = {
         svgoConfig: {
           plugins: [
             {
-              name: "preset-default",
+              name: 'preset-default',
               params: {
                 override: {
                   removeViewBox: false,
@@ -24,8 +24,8 @@ module.exports = {
         titleProp: true,
       },
       test: /\.svg$/,
-    });
+    })
 
-    return config;
+    return config
   },
-};
+}

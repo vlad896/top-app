@@ -1,23 +1,23 @@
-import { useContext, KeyboardEvent, useState } from "react";
-import { AppContext } from "../../context/app.coontext";
-import { IFirstLevelMenuItem, PageItem } from "../../Interface/menu.interface";
-import styles from "./Menu.module.css";
-import { motion } from "framer-motion";
-import cn from "classnames";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { firstLevelMenu } from "../../helpers/helpers";
+import { useContext, KeyboardEvent, useState } from 'react'
+import { AppContext } from '../../context/app.coontext'
+import { IFirstLevelMenuItem, PageItem } from '../../Interface/menu.interface'
+import styles from './Menu.module.css'
+import { motion } from 'framer-motion'
+import cn from 'classnames'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { firstLevelMenu } from '../../helpers/helpers'
 
 const variants = {
   visible: {
     marginBottom: 20,
     transition: {
-      when: "beforeChildren",
+      when: 'beforeChildren',
       staggerChildren: 0.1,
     },
   },
   hidden: { marginBottom: 0 },
-};
+}
 const variantsChildren = {
   visible: {
     opacity: 1,
@@ -27,13 +27,13 @@ const variantsChildren = {
     opacity: 0,
     height: 0,
   },
-};
+}
 
 export const Menu = (): JSX.Element => {
-  const [announce, setAnnounce] = useState<"closed" | "opened" | undefined>();
+  const [announce, setAnnounce] = useState<'closed' | 'opened' | undefined>()
 
-  const { firstCategory, menu, setMenu } = useContext(AppContext);
-  const router = useRouter();
+  const { firstCategory, menu, setMenu } = useContext(AppContext)
+  const router = useRouter()
 
   const openSecondLevel = (secondCategory: string) => {
     setMenu &&
@@ -41,19 +41,19 @@ export const Menu = (): JSX.Element => {
         menu.map((m) => {
           //setMenu для обновления меню
           if (m._id.secondCategory == secondCategory) {
-            setAnnounce(m.isOpened ? "closed" : "opened"); //условие написано наоборот тк в следующей строке мы меняем значение
-            m.isOpened = !m.isOpened;
+            setAnnounce(m.isOpened ? 'closed' : 'opened') //условие написано наоборот тк в следующей строке мы меняем значение
+            m.isOpened = !m.isOpened
           }
-          return m;
+          return m
         })
-      );
-  };
+      )
+  }
   const openSecondLevelKey = (key: KeyboardEvent, secondCategory: string) => {
-    if (key.code == "Space" || key.code == "Enter") {
-      key.preventDefault();
-      openSecondLevel(secondCategory);
+    if (key.code == 'Space' || key.code == 'Enter') {
+      key.preventDefault()
+      openSecondLevel(secondCategory)
     }
-  };
+  }
 
   const buildFirstLevel = () => {
     return (
@@ -76,24 +76,20 @@ export const Menu = (): JSX.Element => {
           </li>
         ))}
       </ul>
-    );
-  };
+    )
+  }
 
   const buildSecondLevel = (menuItem: IFirstLevelMenuItem) => {
     return (
       <ul className={styles.secondBlock}>
         {menu.map((m) => {
-          if (
-            m.pages.map((p) => p.alias).includes(router.asPath.split("/")[2])
-          ) {
-            m.isOpened = true;
+          if (m.pages.map((p) => p.alias).includes(router.asPath.split('/')[2])) {
+            m.isOpened = true
           }
           return (
             <li key={m._id.secondCategory}>
               <button
-                onKeyDown={(key: KeyboardEvent) =>
-                  openSecondLevelKey(key, m._id.secondCategory)
-                }
+                onKeyDown={(key: KeyboardEvent) => openSecondLevelKey(key, m._id.secondCategory)}
                 className={styles.secondLevel}
                 onClick={() => openSecondLevel(m._id.secondCategory)}
                 aria-exdanded={m.isOpened}
@@ -103,52 +99,45 @@ export const Menu = (): JSX.Element => {
               <motion.ul
                 layout
                 variants={variants}
-                initial={m.isOpened ? "visible" : "hidden"}
-                animate={m.isOpened ? "visible" : "hidden"}
+                initial={m.isOpened ? 'visible' : 'hidden'}
+                animate={m.isOpened ? 'visible' : 'hidden'}
                 className={cn(styles.secondLevelBlock)}
               >
                 {buildThirdLevel(m.pages, menuItem.route, m.isOpened ?? false)}
               </motion.ul>
             </li>
-          );
+          )
         })}
       </ul>
-    );
-  };
+    )
+  }
 
-  const buildThirdLevel = (
-    pages: PageItem[],
-    route: string,
-    isOpened: boolean
-  ) => {
+  const buildThirdLevel = (pages: PageItem[], route: string, isOpened: boolean) => {
     return pages.map((p) => (
       <motion.li key={p._id} variants={variantsChildren}>
         <Link legacyBehavior href={`/${route}/${p.alias}`}>
           <a
             tabIndex={isOpened ? 0 : -1}
             className={cn(styles.ThirdLevel, {
-              [styles.ThirdLevelActive]:
-                `/${route}/${p.alias}` == router.asPath,
+              [styles.ThirdLevelActive]: `/${route}/${p.alias}` == router.asPath,
             })}
-            aria-current={
-              `/${route}/${p.alias}` == router.asPath ? "page" : "false"
-            }
+            aria-current={`/${route}/${p.alias}` == router.asPath ? 'page' : 'false'}
           >
             {p.category}
           </a>
         </Link>
       </motion.li>
-    ));
-  };
+    ))
+  }
 
   return (
     <nav className={styles.menu} role="navigation">
       {announce && (
         <span role="log" className="visualyHidden">
-          {announce == "opened" ? "развернуто" : "свернуто"}
+          {announce == 'opened' ? 'развернуто' : 'свернуто'}
         </span>
       )}
       {buildFirstLevel()}
     </nav>
-  );
-};
+  )
+}

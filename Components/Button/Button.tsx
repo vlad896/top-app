@@ -1,33 +1,27 @@
-import styles from "./Button.module.css";
-import { IButtonProps } from "./Button.props";
-import cn from "classnames";
-import ArrowIcon from "./arrow.svg";
+import styles from './Button.module.css'
+import { IButtonProps } from './Button.props'
+import cn from 'classnames'
+import ArrowIcon from './arrow.svg'
 
-export const Button = ({
-  children,
-  arrow = "none",
-  appearance = "primary",
-  className,
-  ...props
-}: IButtonProps) => {
+export const Button = ({ children, arrow = 'none', appearance = 'primary', className, ...props }: IButtonProps) => {
   return (
     <button
       className={cn(styles.button, className, {
-        [styles.primary]: appearance == "primary",
-        [styles.ghost]: appearance == "ghost",
+        [styles.primary]: appearance == 'primary',
+        [styles.ghost]: appearance == 'ghost',
       })}
       {...props}
     >
       {children}
-      {arrow != "none" && (
+      {arrow != 'none' && (
         <span
           className={cn(styles.arrow, {
-            [styles.down]: arrow == "down",
+            [styles.down]: arrow == 'down',
           })}
         >
           <ArrowIcon />
         </span>
       )}
     </button>
-  );
-};
+  )
+}

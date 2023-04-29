@@ -10,7 +10,7 @@
   font-weight: 500;
   line-height: 20px;
   grid-template-columns: 1fr auto auto;
-  grid-template-areas: "first second third";
+  grid-template-areas: 'first second third';
   gap: 10px 40px;
 }
 
@@ -41,8 +41,8 @@
   .footer {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "first"
-      "second"
-      "third";
+      'first'
+      'second'
+      'third';
   }
 }

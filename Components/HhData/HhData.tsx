@@ -1,21 +1,16 @@
-import { IHhDataProps } from "./HhData.props";
-import styles from "./HHData.module.css";
-import { Card } from "../Card/Card";
-import RateIcon from "./StarsRating.svg";
-import { PriceRU } from "../../helpers/helpers";
-export const HhData = ({
-  count,
-  juniorSalary,
-  middleSalary,
-  seniorSalary,
-}: IHhDataProps) => {
+import { IHhDataProps } from './HhData.props'
+import styles from './HHData.module.css'
+import { Card } from '../Card/Card'
+import RateIcon from './StarsRating.svg'
+import { PriceRU } from '../../helpers/helpers'
+export const HhData = ({ count, juniorSalary, middleSalary, seniorSalary }: IHhDataProps) => {
   return (
     <div className={styles.hh}>
-      <Card color={"white"} className={styles.hhCounter}>
+      <Card color={'white'} className={styles.hhCounter}>
         <div className={styles.hhCounterTitle}>Всего вакансий</div>
         <div className={styles.hhStatCount}>{count}</div>
       </Card>
-      <Card color={"white"} className={styles.salary}>
+      <Card color={'white'} className={styles.salary}>
         <div>
           <div className={styles.hhCounterTitle}>Начальный</div>
           <div className={styles.hhCount}>{PriceRU(juniorSalary)}</div>
@@ -45,5 +40,5 @@ export const HhData = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}

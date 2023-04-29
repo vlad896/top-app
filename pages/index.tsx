@@ -1,39 +1,22 @@
-import { GetStaticProps } from "next";
-import { useState } from "react";
-import {
-  HTag,
-  Button,
-  Ptag,
-  Tag,
-  Rating,
-  Input,
-  TextArea,
-  Search,
-} from "../Components/index";
-import { WithLayout } from "../Layout/Layout";
-import axios from "axios";
-import { MenuItem } from "../Interface/menu.interface";
-import { API } from "../helpers/api";
+import { GetStaticProps } from 'next'
+import { useState } from 'react'
+import { HTag, Button, Ptag, Tag, Rating, Input, TextArea, Search } from '../Components/index'
+import { WithLayout } from '../Layout/Layout'
+import axios from 'axios'
+import { MenuItem } from '../Interface/menu.interface'
+import { API } from '../helpers/api'
 
 function Home({ menu }: HomeProps) {
-  const [sum, setSum] = useState<number>(1);
+  const [sum, setSum] = useState<number>(1)
 
-  const [rating, setRating] = useState<number>(4);
+  const [rating, setRating] = useState<number>(4)
   return (
     <>
       <HTag tag="h2">{sum}</HTag>
-      <Button
-        arrow="down"
-        appearance="ghost"
-        onClick={() => setSum((x) => x + 1)}
-      >
+      <Button arrow="down" appearance="ghost" onClick={() => setSum((x) => x + 1)}>
         Button
       </Button>
-      <Button
-        arrow="right"
-        appearance="primary"
-        onClick={() => setSum((x) => x - 1)}
-      >
+      <Button arrow="right" appearance="primary" onClick={() => setSum((x) => x - 1)}>
         Button
       </Button>
       <Ptag size="small">какой то P тэг</Ptag>
@@ -51,25 +34,25 @@ function Home({ menu }: HomeProps) {
       <TextArea />
       <Search />
     </>
-  );
+  )
 }
 
-export default WithLayout(Home);
+export default WithLayout(Home)
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  const firstCategory = 0;
+  const firstCategory = 0
   const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
     firstCategory,
-  });
+  })
 
   return {
     props: {
       menu,
       firstCategory,
     },
-  };
-};
+  }
+}
 interface HomeProps extends Record<string, unknown> {
-  menu: MenuItem[];
-  firstCategory: number;
+  menu: MenuItem[]
+  firstCategory: number
 }

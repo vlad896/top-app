@@ -1,24 +1,23 @@
-import { ILayoutProps } from "./Layout.props";
-import styles from "./Layout.module.css";
-import cn from "classnames";
-import { Header } from "./Header/Header";
-import { SideBar } from "./SideBar/SideBar";
-import { Footer } from "./Footer/Footer";
-import { FunctionComponent, useState, useRef, KeyboardEvent } from "react";
-import { AppContextProvaider, IAppContext } from "../context/app.coontext";
-import { Up } from "../Components";
+import { ILayoutProps } from './Layout.props'
+import styles from './Layout.module.css'
+import cn from 'classnames'
+import { Header } from './Header/Header'
+import { SideBar } from './SideBar/SideBar'
+import { Footer } from './Footer/Footer'
+import { FunctionComponent, useState, useRef, KeyboardEvent } from 'react'
+import { AppContextProvaider, IAppContext } from '../context/app.coontext'
+import { Up } from '../Components'
 
 const Layout = ({ children }: ILayoutProps) => {
-  const [isSkiplinkDisplayed, setIsSkiplinkDisplayed] =
-    useState<boolean>(false);
-  const bodyRef = useRef<HTMLDivElement>(null);
+  const [isSkiplinkDisplayed, setIsSkiplinkDisplayed] = useState<boolean>(false)
+  const bodyRef = useRef<HTMLDivElement>(null)
   const skipContentAction = (key: KeyboardEvent) => {
-    if (key.code == "Space" || key.code == "Enter") {
-      key.preventDefault();
-      bodyRef.current?.focus();
+    if (key.code == 'Space' || key.code == 'Enter') {
+      key.preventDefault()
+      bodyRef.current?.focus()
     }
-    setIsSkiplinkDisplayed(false);
-  };
+    setIsSkiplinkDisplayed(false)
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -41,21 +40,16 @@ const Layout = ({ children }: ILayoutProps) => {
       <Up></Up>
       <Footer className={styles.footer} />
     </div>
-  );
-};
-export const WithLayout = <T extends Record<string, unknown> & IAppContext>(
-  Components: FunctionComponent<T>
-) => {
+  )
+}
+export const WithLayout = <T extends Record<string, unknown> & IAppContext>(Components: FunctionComponent<T>) => {
   return function WithLayoutComponent(props: T) {
     return (
-      <AppContextProvaider
-        firstCategory={props.firstCategory}
-        menu={props.menu}
-      >
+      <AppContextProvaider firstCategory={props.firstCategory} menu={props.menu}>
         <Layout>
           <Components {...props}></Components>
         </Layout>
       </AppContextProvaider>
-    );
-  };
-};
+    )
+  }
+}

@@ -1,6 +1,6 @@
-import styles from "./Advantages.module.css";
-import { IAdvantagesProps } from "./Advantages.props";
-import CheckIcon from "./check.svg";
+import styles from './Advantages.module.css'
+import { IAdvantagesProps } from './Advantages.props'
+import CheckIcon from './check.svg'
 
 export const Advantages = ({ advantages }: IAdvantagesProps) => {
   return (
@@ -14,5 +14,5 @@ export const Advantages = ({ advantages }: IAdvantagesProps) => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}

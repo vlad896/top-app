@@ -1,7 +1,7 @@
-import { ISortProps, SortEnum } from "./Sort.props";
-import styles from "./Sort.module.css";
-import cn from "classnames";
-import SortIcon from "./Sort.svg";
+import { ISortProps, SortEnum } from './Sort.props'
+import styles from './Sort.module.css'
+import cn from 'classnames'
+import SortIcon from './Sort.svg'
 
 export const Sort = ({ sort, setSort, className, ...props }: ISortProps) => {
   return (
@@ -33,5 +33,5 @@ export const Sort = ({ sort, setSort, className, ...props }: ISortProps) => {
         По цене
       </button>
     </div>
-  );
-};
+  )
+}
