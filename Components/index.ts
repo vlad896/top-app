@@ -15,3 +15,7 @@ export * from "./Hr/Hr";
 export * from "./CardReviews/CardReviews";
 export * from "./CardReviewsForm/CardReviewsForm";
 export * from "./Up/Up";
+export * from "./Icon/BooksIcon";
+export * from "./Icon/CoursesIcon";
+export * from "./Icon/ProductIcon";
+export * from "./Icon/ServicesIcon";
