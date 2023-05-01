@@ -1,11 +1,11 @@
 import cn from 'classnames'
 import { ISearchProps } from './Search.props'
 import styles from './Search.module.css'
-import SearchIconComp from './SearchIconComp.svg'
 import { Input } from '../Input/Input'
 import { Button } from '../Button/Button'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import { SearchIcon } from '../Icon/SearchIcon'
 export const Search = ({ className, ...props }: ISearchProps) => {
   const [search, setSearh] = useState<string>('')
   const router = useRouter()
@@ -36,7 +36,7 @@ export const Search = ({ className, ...props }: ISearchProps) => {
       />
 
       <Button appearance="primary" className={styles.button} onClick={GoToSearch} aria-label="Поиск по сайту">
-        <SearchIconComp />
+        <SearchIcon />
       </Button>
     </form>
   )

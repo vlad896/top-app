@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import cn from 'classnames'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { firstLevelMenu } from '../../helpers/helpers'
+import { FIRST_LEVEL_MENU } from '../../helpers/helpers'
 
 const variants = {
   visible: {
@@ -18,9 +18,11 @@ const variants = {
   },
   hidden: { marginBottom: 0 },
 }
+
 const variantsChildren = {
   visible: {
     opacity: 1,
+    height: 'auto',
     minHeight: 32,
   },
   hidden: {
@@ -35,6 +37,8 @@ export const Menu = (): JSX.Element => {
   const { firstCategory, menu, setMenu } = useContext(AppContext)
   const router = useRouter()
 
+  console.log('menu', menu, firstCategory)
+
   const openSecondLevel = (secondCategory: string) => {
     setMenu &&
       setMenu(
@@ -48,6 +52,7 @@ export const Menu = (): JSX.Element => {
         })
       )
   }
+
   const openSecondLevelKey = (key: KeyboardEvent, secondCategory: string) => {
     if (key.code == 'Space' || key.code == 'Enter') {
       key.preventDefault()
@@ -58,7 +63,7 @@ export const Menu = (): JSX.Element => {
   const buildFirstLevel = () => {
     return (
       <ul className={styles.firstLevelList}>
-        {firstLevelMenu.map((menu) => (
+        {FIRST_LEVEL_MENU.map((menu) => (
           <li key={menu.route} aria-expanded={menu.id == firstCategory}>
             <Link legacyBehavior href={`/${menu.route}`}>
               <a>

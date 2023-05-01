@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 import axios from 'axios'
 import { WithLayout } from '../../Layout/Layout'
 import { MenuItem } from '../../Interface/menu.interface'
-import { firstLevelMenu } from '../../helpers/helpers'
+import { FIRST_LEVEL_MENU } from '../../helpers/helpers'
 import { ParsedUrlQuery } from 'querystring'
 import { TopLevelCategory } from '../../Interface/toppage.interface'
 import { API } from '../../helpers/api'
@@ -15,7 +15,7 @@ export default WithLayout(Type)
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: firstLevelMenu.map((m) => '/' + m.route),
+    paths: FIRST_LEVEL_MENU.map((m) => '/' + m.route),
     fallback: true,
   }
 }
@@ -26,12 +26,13 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({ params }: GetS
       notFound: true,
     }
   }
-  const firstCategoryItem = firstLevelMenu.find((m) => m.route == params.type)
+  const firstCategoryItem = FIRST_LEVEL_MENU.find((m) => m.route == params.type)
   if (!firstCategoryItem) {
     return {
       notFound: true,
     }
   }
+
   const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
     firstCategory: firstCategoryItem.id,
   })

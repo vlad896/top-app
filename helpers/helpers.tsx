@@ -1,11 +1,11 @@
-import CoursesIcon from './icon/courses.svg'
-import ProductIcon from './icon/product.svg'
-import ServicesIcon from './icon/services.svg'
-import BooksIcon from './icon/book.svg'
+import { CoursesIcon } from '../Components/Icon/CoursesIcon'
+import { BooksIcon } from '../Components/Icon/BooksIcon'
+import { ServicesIcon } from '../Components/Icon/ServicesIcon'
+import { ProductIcon } from '../Components/Icon/ProductIcon'
 import { TopLevelCategory } from '../Interface/toppage.interface'
 import { IFirstLevelMenuItem } from '../Interface/menu.interface'
 
-export const firstLevelMenu: IFirstLevelMenuItem[] = [
+export const FIRST_LEVEL_MENU: IFirstLevelMenuItem[] = [
   {
     route: 'courses',
     name: 'Курсы',

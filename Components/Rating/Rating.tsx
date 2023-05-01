@@ -1,8 +1,8 @@
 import { IRatingProps } from './Rating.props'
 import styles from './Rating.module.css'
 import cn from 'classnames'
-import StarIcon from './Star.svg'
 import { useEffect, useState, KeyboardEvent, forwardRef, ForwardedRef } from 'react'
+import { RateIcon } from '../Icon/RateIcon'
 
 export const Rating = forwardRef(
   ({ isEditable = false, rating, setRating, ...props }: IRatingProps, ref: ForwardedRef<HTMLDivElement>) => {
@@ -29,7 +29,7 @@ export const Rating = forwardRef(
             aria-valuemin={1}
             aria-label={isEditable ? 'Укажите рейтинг' : 'рейтинг' + rating}
           >
-            <StarIcon
+            <RateIcon
               tabIndex={isEditable ? 0 : -1} //-1 вне таб index
               onKeyDown={() => KeyDown}
             />

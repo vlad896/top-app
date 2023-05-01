@@ -1,5 +1,5 @@
+import { ArrowIcon } from '../Icon/ArrowIcon'
 import styles from './Up.module.css'
-import UpIcon from './arrow.svg'
 
 export const Up = () => {
   const scrollToUp = () => {
@@ -11,7 +11,7 @@ export const Up = () => {
 
   return (
     <button className={styles.Up} onClick={scrollToUp}>
-      <UpIcon />
+      <ArrowIcon />
     </button>
   )
 }

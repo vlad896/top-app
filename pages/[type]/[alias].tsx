@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import React from 'react'
 import { API } from '../../helpers/api'
-import { firstLevelMenu } from '../../helpers/helpers'
+import { FIRST_LEVEL_MENU } from '../../helpers/helpers'
 import { MenuItem } from '../../Interface/menu.interface'
 import { ProductModel } from '../../Interface/product.interface'
 import { TopLevelCategory, TopPageModel } from '../../Interface/toppage.interface'
@@ -34,7 +34,7 @@ export default WithLayout(TopPage)
 
 export const getStaticPaths: GetStaticPaths = async () => {
   let paths: string[] = []
-  for (const m of firstLevelMenu) {
+  for (const m of FIRST_LEVEL_MENU) {
     const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
       firstCategory: m.id,
     })
@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps<TopPageProps> = async ({
       notFound: true,
     }
   }
-  const firstCategoryItem = firstLevelMenu.find((m) => m.route == params.type)
+  const firstCategoryItem = FIRST_LEVEL_MENU.find((m) => m.route == params.type)
   if (!firstCategoryItem) {
     return {
       notFound: true,

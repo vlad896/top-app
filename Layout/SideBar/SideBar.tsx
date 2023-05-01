@@ -1,6 +1,6 @@
 import { ISideBarProps } from './SideBar.props'
 import { Menu } from '../Menu/Menu'
-import Logo from '../logo.svg'
+import { Logo } from '../../Components/Icon/Logo'
 import cn from 'classnames'
 import styles from './SideBar.module.css'
 import Link from 'next/link'
@@ -10,7 +10,7 @@ export const SideBar = ({ className, ...props }: ISideBarProps) => {
   return (
     <div className={cn(className, styles.SideBar)} {...props}>
       <Link href={'/#'}>
-        <Logo className={styles.logo} />
+        <Logo />
       </Link>
       <Search />
       <Menu />

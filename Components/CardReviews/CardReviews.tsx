@@ -1,14 +1,15 @@
 import { ICardReviewsProps } from './CardReviews.props'
 import cn from 'classnames'
 import styles from './CardReviews.module.css'
-import UserIcon from './User.svg'
 import { Hr } from '../Hr/Hr'
+
 import { Button } from '../Button/Button'
 import { Input } from '../Input/Input'
 import { TextArea } from '../TextArea/TextArea'
 import { format } from 'date-fns'
 import { ru } from 'date-fns/locale'
 import { Rating } from '../Rating/Rating'
+import { UserIcon } from '../Icon/UserIcon'
 export const CardReviews = ({ review, className, ...props }: ICardReviewsProps) => {
   const { name, title, createdAt, rating, description } = review
   return (

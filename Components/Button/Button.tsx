@@ -1,7 +1,7 @@
 import styles from './Button.module.css'
 import { IButtonProps } from './Button.props'
 import cn from 'classnames'
-import ArrowIcon from './arrow.svg'
+import { ArrowButtonIcon } from '../Icon/ArrowButtonIcon'
 
 export const Button = ({ children, arrow = 'none', appearance = 'primary', className, ...props }: IButtonProps) => {
   return (
@@ -19,7 +19,7 @@ export const Button = ({ children, arrow = 'none', appearance = 'primary', class
             [styles.down]: arrow == 'down',
           })}
         >
-          <ArrowIcon />
+          <ArrowButtonIcon />
         </span>
       )}
     </button>

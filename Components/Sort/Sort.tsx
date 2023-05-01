@@ -1,7 +1,7 @@
 import { ISortProps, SortEnum } from './Sort.props'
 import styles from './Sort.module.css'
 import cn from 'classnames'
-import SortIcon from './Sort.svg'
+import { SortIcon } from '../Icon/SortIcon'
 
 export const Sort = ({ sort, setSort, className, ...props }: ISortProps) => {
   return (

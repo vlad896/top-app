@@ -1,8 +1,8 @@
 import { IHhDataProps } from './HhData.props'
 import styles from './HHData.module.css'
 import { Card } from '../Card/Card'
-import RateIcon from './StarsRating.svg'
 import { PriceRU } from '../../helpers/helpers'
+import { RateIcon } from '../Icon/RateIcon'
 export const HhData = ({ count, juniorSalary, middleSalary, seniorSalary }: IHhDataProps) => {
   return (
     <div className={styles.hh}>
