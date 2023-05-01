@@ -19,7 +19,7 @@ export const Button = ({ children, arrow = 'none', appearance = 'primary', class
             [styles.down]: arrow == 'down',
           })}
         >
-          <ArrowIcon />
+          <ArrowButtonIcon />
         </span>
       )}
     </button>

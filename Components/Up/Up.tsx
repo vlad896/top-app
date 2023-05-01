@@ -11,7 +11,7 @@ export const Up = () => {
 
   return (
     <button className={styles.Up} onClick={scrollToUp}>
-      <UpIcon />
+      <ArrowIcon />
     </button>
   )
 }
