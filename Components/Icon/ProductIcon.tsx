@@ -3,7 +3,7 @@ interface Props {
   color?: string
 }
 
-export const ProductIcon = (props: ProductProps) => {
+export const ProductIcon = (props: Props) => {
   const { size = 23, color = '#787D85' } = props
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill={color} xmlns="http://www.w3.org/2000/svg">

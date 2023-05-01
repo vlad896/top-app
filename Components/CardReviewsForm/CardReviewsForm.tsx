@@ -1,12 +1,12 @@
 import { ICardReviewsFormProps } from './CardReviewsForm.props'
 import cn from 'classnames'
 import styles from './CardReviewsForm.module.css'
-import CloseIcon from './close.svg'
 import { Button } from '../Button/Button'
 import { Input } from '../Input/Input'
 import { TextArea } from '../TextArea/TextArea'
 import { Rating } from '../Rating/Rating'
 import { ICardReviewsForm } from './CardReviewsForm.interface'
+import { CloseIcon } from '../Icon/CloseIcon'
 export const CardReviewsForm = ({ productId, className, ...props }: ICardReviewsFormProps) => {
   //const { register, control, handleSubmit, formState } = useForm<ICardReviewsFormProps>();
 

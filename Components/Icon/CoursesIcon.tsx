@@ -1,3 +1,7 @@
+interface Props {
+  size?: number
+  color?: string
+}
 export const CoursesIcon = (props: Props) => {
   const { size = 24, color = '#787D85' } = props
   return (
