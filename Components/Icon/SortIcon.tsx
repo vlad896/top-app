@@ -1,14 +1,10 @@
-interface Props {
-  size?: number
-  color?: string
-  className?: string
-}
+import { IconProps } from './icon.types'
 
-export const SortIcon = (props: Props) => {
-  const { size = 20, color = '#7653FC', className } = props
+export const SortIcon = (props: IconProps) => {
+  const { size = 20, color = '#7653FC', ...rest } = props
   return (
     <svg
-      className={className}
+      {...rest}
       width={size}
       height={size}
       viewBox={`0 0 ${size} ${size}`}

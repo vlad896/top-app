@@ -1,10 +1,6 @@
-interface Props {
-  size?: number
-  color?: string
-  [key: string]: any
-}
+import { IconProps } from './icons.types'
 
-export const CloseIcon = (props: Props) => {
+export const CloseIcon = (props: IconProps) => {
   const { size = 12, color = '#1CC37E', ...rest } = props
   return (
     <svg

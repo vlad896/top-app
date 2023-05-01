@@ -1,14 +1,16 @@
-interface Props {
-  size?: number
-  color?: string
-  className?: string
-  [key: string]: any
-}
+import { IconProps } from './icons.types'
 
-export const CheckIcon = (props: Props) => {
-  const { size = 50, color = '#C8F8E4', className, ...rest } = props
+export const CheckIcon = (props: IconProps) => {
+  const { size = 50, color = '#C8F8E4', ...rest } = props
   return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      {...rest}
+      width={size}
+      height={size}
+      viewBox={`0 0 ${size} ${size}`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <circle cx="25" cy="25" r="25" fill={color} />
       <g clip-path="url(#clip0_77_0)">
         <path

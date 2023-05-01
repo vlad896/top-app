@@ -1,12 +1,7 @@
-interface Props {
-  size?: number
-  color?: string
-  className?: string
-  [key: string]: any
-}
+import { IconProps } from './icon.types'
 
-export const RateIcon = (props: Props) => {
-  const { size = 20, color = '#BBBBBB', className, ...rest } = props
+export const RateIcon = (props: IconProps) => {
+  const { size = 20, color = '#BBBBBB', ...rest } = props
   return (
     <svg
       {...rest}

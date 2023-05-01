@@ -1,12 +1,10 @@
-interface Props {
-  width?: number
-  height?: number
-  color?: string
-}
-export const Logo = (props: Props) => {
-  const { width = 159, height = 44, color = '#7653FC' } = props
+import { IconProps } from './icon.types'
+
+export const Logo = (props: IconProps) => {
+  const { width = 159, height = 44, color = '#7653FC', ...rest } = props
   return (
     <svg
+      {...rest}
       width={width}
       height={height}
       viewBox={`0 0 ${width} ${height}`}
