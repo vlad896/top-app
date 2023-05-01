@@ -5,7 +5,7 @@ import { ProductIcon } from '../Components/Icon/ProductIcon'
 import { TopLevelCategory } from '../Interface/toppage.interface'
 import { IFirstLevelMenuItem } from '../Interface/menu.interface'
 
-export const firstLevelMenu: IFirstLevelMenuItem[] = [
+export const FIRST_LEVEL_MENU: IFirstLevelMenuItem[] = [
   {
     route: 'courses',
     name: 'Курсы',
