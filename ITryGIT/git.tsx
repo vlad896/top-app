@@ -1,3 +1,5 @@
 export const GIT=()=>{
-	return 'hello git'
+	return (
+		<div>asfas</div>
+	)
 }
